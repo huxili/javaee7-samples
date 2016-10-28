@@ -43,6 +43,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SaveBook }
+     * 
+     */
+    public SaveBook createSaveBook() {
+        return new SaveBook();
+    }
+
+    /**
+     * Create an instance of {@link AddAppendix }
+     * 
+     */
+    public AddAppendix createAddAppendix() {
+        return new AddAppendix();
+    }
+
+    /**
      * Create an instance of {@link EBook }
      * 
      */
@@ -59,43 +75,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TakeBookResponse }
+     * Create an instance of {@link FindEBooks }
      * 
      */
-    public TakeBookResponse createTakeBookResponse() {
-        return new TakeBookResponse();
-    }
-
-    /**
-     * Create an instance of {@link TakeBook }
-     * 
-     */
-    public TakeBook createTakeBook() {
-        return new TakeBook();
-    }
-
-    /**
-     * Create an instance of {@link SaveBookResponse }
-     * 
-     */
-    public SaveBookResponse createSaveBookResponse() {
-        return new SaveBookResponse();
-    }
-
-    /**
-     * Create an instance of {@link SaveBook }
-     * 
-     */
-    public SaveBook createSaveBook() {
-        return new SaveBook();
-    }
-
-    /**
-     * Create an instance of {@link WelcomeMessageResponse }
-     * 
-     */
-    public WelcomeMessageResponse createWelcomeMessageResponse() {
-        return new WelcomeMessageResponse();
+    public FindEBooks createFindEBooks() {
+        return new FindEBooks();
     }
 
     /**
@@ -107,11 +91,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FindEBooks }
+     * Create an instance of {@link TakeBookResponse }
      * 
      */
-    public FindEBooks createFindEBooks() {
-        return new FindEBooks();
+    public TakeBookResponse createTakeBookResponse() {
+        return new TakeBookResponse();
     }
 
     /**
@@ -123,11 +107,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddAppendix }
+     * Create an instance of {@link SaveBookResponse }
      * 
      */
-    public AddAppendix createAddAppendix() {
-        return new AddAppendix();
+    public SaveBookResponse createSaveBookResponse() {
+        return new SaveBookResponse();
+    }
+
+    /**
+     * Create an instance of {@link TakeBook }
+     * 
+     */
+    public TakeBook createTakeBook() {
+        return new TakeBook();
+    }
+
+    /**
+     * Create an instance of {@link WelcomeMessageResponse }
+     * 
+     */
+    public WelcomeMessageResponse createWelcomeMessageResponse() {
+        return new WelcomeMessageResponse();
     }
 
     /**

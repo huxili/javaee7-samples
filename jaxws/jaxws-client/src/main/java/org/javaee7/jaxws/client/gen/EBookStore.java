@@ -28,20 +28,6 @@ public interface EBookStore {
      * 
      * @param arg0
      * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "welcomeMessage", targetNamespace = "http://endpoint.jaxws.javaee7.org/", className = "org.javaee7.jaxws.client.gen.WelcomeMessage")
-    @ResponseWrapper(localName = "welcomeMessageResponse", targetNamespace = "http://endpoint.jaxws.javaee7.org/", className = "org.javaee7.jaxws.client.gen.WelcomeMessageResponse")
-    public String welcomeMessage(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns java.util.List<java.lang.String>
      */
     @WebMethod
@@ -93,5 +79,19 @@ public interface EBookStore {
         EBook arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "welcomeMessage", targetNamespace = "http://endpoint.jaxws.javaee7.org/", className = "org.javaee7.jaxws.client.gen.WelcomeMessage")
+    @ResponseWrapper(localName = "welcomeMessageResponse", targetNamespace = "http://endpoint.jaxws.javaee7.org/", className = "org.javaee7.jaxws.client.gen.WelcomeMessageResponse")
+    public String welcomeMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }

@@ -134,7 +134,7 @@ public class Person implements Serializable {
 
     @Override
     public String toString() {
-        return name + id;
+        return id+"=" + name;
     }
 
 }

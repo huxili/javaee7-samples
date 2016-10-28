@@ -47,6 +47,9 @@
             <reader ref="myItemReader"/>
             <processor ref="myItemProcessor"/>
             <writer ref="myItemWriter"/>
+            <skippable-exception-classes>
+                <include class="java.lang.Exception" />
+            </skippable-exception-classes>
         </chunk>    
     </step>
 </job>

@@ -43,6 +43,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.StringTokenizer;
 import javax.batch.api.chunk.ItemProcessor;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -51,23 +52,29 @@ import javax.inject.Named;
 @Named
 public class MyItemProcessor implements ItemProcessor {
     private static int id = 1;
+    private static int count = 1;
     private SimpleDateFormat format = new SimpleDateFormat("M/dd/yy");
+    @Inject MyEJBService ejb;
 
     @Override
-    public Person processItem(Object t) {
+    public Person processItem(Object t) throws Exception {
         System.out.println("processItem: " + t);
+        count++;
 
         StringTokenizer tokens = new StringTokenizer((String) t, ",");
 
         String name = tokens.nextToken();
-        String date;
+        String date = null;
 
         try {
-            date = tokens.nextToken();
+            date = tokens.nextToken().trim();
             format.setLenient(false);
             format.parse(date);
         } catch (ParseException e) {
-            return null;
+            if ("Error1".equals(date)) throw e;
+            if ("Error2".equals(date)) throw new RuntimeException(e);
+            if ("Error3".equals(date)) ejb.AppError();
+            if ("Error4".equals(date)) ejb.technicalError();
         }
 
         return new Person(id++, name, date);

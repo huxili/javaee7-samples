@@ -6,12 +6,6 @@
       <xsd:import namespace="http://endpoint.jaxws.javaee7.org/" schemaLocation="EBookStoreImplService_schema1.xsd"/>
     </xsd:schema>
   </types>
-  <message name="welcomeMessage">
-    <part name="parameters" element="tns:welcomeMessage"/>
-  </message>
-  <message name="welcomeMessageResponse">
-    <part name="parameters" element="tns:welcomeMessageResponse"/>
-  </message>
   <message name="findEBooks">
     <part name="parameters" element="tns:findEBooks"/>
   </message>
@@ -36,11 +30,13 @@
   <message name="addAppendixResponse">
     <part name="parameters" element="tns:addAppendixResponse"/>
   </message>
+  <message name="welcomeMessage">
+    <part name="parameters" element="tns:welcomeMessage"/>
+  </message>
+  <message name="welcomeMessageResponse">
+    <part name="parameters" element="tns:welcomeMessageResponse"/>
+  </message>
   <portType name="EBookStore">
-    <operation name="welcomeMessage">
-      <input wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/welcomeMessageRequest" message="tns:welcomeMessage"/>
-      <output wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/welcomeMessageResponse" message="tns:welcomeMessageResponse"/>
-    </operation>
     <operation name="findEBooks">
       <input wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/findEBooksRequest" message="tns:findEBooks"/>
       <output wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/findEBooksResponse" message="tns:findEBooksResponse"/>
@@ -57,18 +53,13 @@
       <input wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/addAppendixRequest" message="tns:addAppendix"/>
       <output wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/addAppendixResponse" message="tns:addAppendixResponse"/>
     </operation>
+    <operation name="welcomeMessage">
+      <input wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/welcomeMessageRequest" message="tns:welcomeMessage"/>
+      <output wsam:Action="http://endpoint.jaxws.javaee7.org/EBookStore/welcomeMessageResponse" message="tns:welcomeMessageResponse"/>
+    </operation>
   </portType>
   <binding name="EBookStoreImplPortBinding" type="tns:EBookStore">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="welcomeMessage">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
     <operation name="findEBooks">
       <soap:operation soapAction=""/>
       <input>
@@ -97,6 +88,15 @@
       </output>
     </operation>
     <operation name="addAppendix">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="welcomeMessage">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

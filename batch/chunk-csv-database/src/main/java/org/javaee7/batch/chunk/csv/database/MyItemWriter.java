@@ -56,7 +56,7 @@ public class MyItemWriter extends AbstractItemWriter {
 
     @Override
     public void writeItems(List list) {
-        System.out.println("writeItems: " + list);
+        System.out.println("** writeItems: " + list);
         for (Object person : list) {
             em.persist(person);
         }
